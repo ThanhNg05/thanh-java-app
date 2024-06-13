@@ -83,3 +83,9 @@ pipeline {
                     withEnv(["KUBECONFIG=${env.KUBECONFIG_PATH}"]) {
                         sh """
                         kubectl config use-context ${env.CLUSTER_NAME}
+                        kubectl apply -f k8s/deployment-service.yaml
+                        """
+                    }
+                }
+            }
+        }
